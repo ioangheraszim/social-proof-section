@@ -11,14 +11,21 @@
     --white: hsl(0, 0%, 100%);
 }
 
-*,::before,::after {
+*, ::before, ::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "League Spartan", sans-serif;
+    background-color: var(--white);
 }
 
 .container {
@@ -26,24 +33,172 @@ body {
     transition: 350ms ease-in-out;
     min-height: 100vh;
     margin: 0 auto;
-    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
 }
 
-.hero, .card {
-    border: 1px solid red;
+.hero {
     text-align: center;
-    padding: 2rem .1rem;
+    padding: 2rem 0.1rem 0;
+    background-image: url(./images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat;
+}
+
+.hero__reviews {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
 }
 
 .hero__text {
     font-size: 1.55rem;
     color: var(--very-dark-magenta);
     font-weight: 700;
-    padding: 2.8rem 1.5rem;
+    padding: 2rem 0.5rem 0 0.5rem;
+}
+
+.hero__heading {
+    padding: 1rem;
 }
 
 .hero__description {
+    font-weight: 600;
     font-size: 1.15rem;
+    line-height: 1.45em;
+    color: var(--dark-grayish-magenta);
+}
+
+.hero__container {
     margin: 1rem 0;
-    line-height: 1.3rem;
+    padding: 0.8rem 0;
+    background-color: var(--light-grayish-magent);
+    border-radius: 0.5rem;
+}
+
+.hero_star-icon {
+    margin: 0 0.1rem;
+}
+
+.hero__rate {
+    padding: 0.5rem 0;
+}
+
+.hero__rate-heading {
+    color: var(--very-dark-magenta);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.cards {
+    background-image: url(./images//bg-pattern-bottom-mobile.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cards__card {
+    background-color: var(--very-dark-magenta);
+    margin: 1.25rem 1.25rem 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.cards__card-header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.cards__card-header img {
+    border-radius: 50%;
+    width: 15%;
+    margin-right: 1.5rem;
+}
+
+.cards__card-name, .cards__card-status {
+    margin-top: 0.4rem;
+}
+
+.cards__card-name {
+    color: var(--white);
+    font-weight: 800;
+}
+
+.cards__card-status {
+    color: var(--soft-pink);
+    opacity: 0.75;
+}
+
+.cards__card-text {
+    color: var(--white);
+    line-height: 1.5rem;
+    padding: 0.2rem 1rem;
+}
+
+@media (min-width: 1100px) {
+    .container {
+        width: min(100% - 2rem, 1200px);
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-image: url(./images/bg-pattern-top-desktop.svg);
+    }
+
+    .hero__text {
+        width: 50%;
+        text-align: left;
+        padding: 3rem 2rem;
+    }
+
+    .hero__heading {
+        text-align: left;
+        font-size: 3.54rem;
+        padding-left: 0;
+    }
+
+    .hero__reviews {
+        width: 60%;
+    }
+
+    .second--review {
+        margin-left: 3rem;
+    }
+
+    .third--review {
+        margin-left: 6rem;
+    }
+
+    .hero__container {
+        width: 80%;
+        padding: .75rem;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .hero__stars {
+       margin: 0 1rem;
+    }
+
+    .cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background-image: url(./images/bg-pattern-bottom-desktop.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .cards--second {
+        margin-top: 2.5rem;
+    }
+
+    .cards--third {
+        margin-top: 4.5rem;
+    }
+    
 }
